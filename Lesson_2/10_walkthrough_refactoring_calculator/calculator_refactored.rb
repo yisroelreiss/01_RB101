@@ -11,6 +11,19 @@ def valid_number?(num)
     num.to_i() != 0
 end
 
+def operation_to_message(op)
+  case op
+  when '1'
+    'Adding'
+  when '2'
+    'Subtracting'
+  when '3'
+    'Multplying'
+  when '4'
+    'Dividing'
+  end
+end
+
 prompt("Welcome to caculator! Enter your name:")
 
 name = ''
@@ -58,7 +71,7 @@ loop do # main loop
     2) subtract 
     3) multiply 
     4) divide
-  MSG 
+  MSG
 
   prompt(operator_prompt)
 
@@ -72,6 +85,8 @@ loop do # main loop
       prompt("Must choose 1,2,3 or 4")
     end
   end
+
+  prompt("#{operation_to_message(operator)} the the two numbers...")
 
   result = case operator
     when '1'
