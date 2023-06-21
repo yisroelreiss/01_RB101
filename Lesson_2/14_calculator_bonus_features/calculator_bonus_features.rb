@@ -8,19 +8,25 @@ end
 
 def valid_number?(num)
   # want to make sure that if we call to_i to the string, it will return 0 if not a valid number.
-    num.to_i() != 0
+  num.to_i.to_s == num
+  # old code to validate number, which didnt allow for zero --> num.to_i() != 0
 end
 
 def operation_to_message(op)
-  case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multplying'
-  when '4'
-    'Dividing'
+  # added variable to return case statement
+  word = case op
+    when '1'
+      'Adding'
+    when '2'
+      'Subtracting'
+    when '3'
+      'Multplying'
+    when '4'
+      'Dividing'
+
+  # add more code here if necessary 
+  
+  word
   end
 end
 
